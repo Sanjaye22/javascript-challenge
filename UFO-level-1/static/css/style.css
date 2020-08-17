@@ -35,7 +35,7 @@ body {
   bottom: 0;
   left: 0;
   padding: 5px;
-  background: #1b3146;
+  background: lightslategray;
 }
 
 .navbar {
@@ -102,6 +102,7 @@ select {
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
+  font-style: italic;
 }
 
 .hero h1 {

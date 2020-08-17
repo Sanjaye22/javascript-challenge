@@ -5,47 +5,53 @@ var tableData = data;
 var tbody = d3.select("tbody")
 console.log(data);
 
-// //Step 1: Loop through data and console.log each sighting object
-// data.forEach(function(ufoSight){
-//     console.log(ufoSight);
-// });
-
-//Step 2: Use d3 to append one table row "tr" for each ufo sighting
-// data.forEach(function(ufoSight) {
-//     console.log(ufoSight);
-//     var row = tbody.append("tr");
-// });
-
-// //Step 3: Use "Object.entries to console.log each ufo sighting"
-// data.forEach(function(ufosight) {
-//     console.log(ufosight);
-//     var row = tbody.append("tr");
-
-//     Object.entries(ufosight).forEach(function([key,value]) {
-//         console.log(key, value);
-//     });
-// });
-
-// //Step 4: Use d3 to append 1 cell per ufo sighting value
-// data.forEach(function(ufoSight) {
-//     console.log(ufoSight);
-//         var row = tbody.append("tr");
-    
-//     Object.entries(ufoSight).forEach(function([key, value]) {
-//         console.log(key, value);
-//         var cell = row.append("td");
-//     });
-// });
-
-// // Step 5: Use d3 to update each cell's text with ufo sighting
-data.forEach(function(ufoSight) {
-  console.log(ufoSight);
+// Use d3 to update each cell's text with ufo sighting
+data.forEach(function(ufoSighting) {
+  console.log(ufoSighting);
   var row = tbody.append("tr");
-  Object.entries(ufoSight).forEach(function([key, value]) {
+  Object.entries(ufoSighting).forEach(function([key, value]) {
     console.log(key, value);
     // Append a cell to the row for each value
-    // in the weather report object
     var cell = row.append("td");
     cell.text(value);
   });
 });
+
+// //Code that will listen for events and search through the `date/time` column to find rows that match user input
+// displayData(tableData)
+
+//Select the button
+var submitButton = d3.select("#filter-btn");
+
+// //Select the form
+// var form = d3.select("#form");
+
+//Create event handlers
+submitButton.on("click", getInfo);
+
+//Complete the event handler function for the form
+function getInfo() {
+    d3.select("tbody").html("");
+    d3.event.preventDefault();
+    var inputElement = d3.select("#datetime").property("value");
+    console.log(inputElement);
+};
+
+//Filter
+var filteredData = tableData.filter(record => record.datetime === inputElement);
+console.log(filteredData);
+
+// Display the filtered dataset
+filteredData.forEach((ufoSighting) => {
+    var row = tbody.append('tr');
+
+    Object.entries(ufoSighting).forEach(([key, value]) => {
+        console.log(key, value);
+        var cell = row.append('td');
+        cell.text(value);
+    });
+});
+
+
+
+
