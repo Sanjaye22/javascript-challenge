@@ -62,6 +62,6 @@ function getdata() {
       cell.text(value);
     });
   });
-});
+}
 
 
