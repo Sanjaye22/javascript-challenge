@@ -18,13 +18,9 @@ data.forEach(function (ufoSighting) {
 });
 
 // //Code that will listen for events and search through the `date/time` column to find rows that match user input
-// displayData(tableData)
 
 //Select the button
-var submitButton = d3.select("#filter-btn");
-
-//Create event handlers
-submitButton.on("click", getInfo);
+var submitButton = d3.select("#filter-btn").on("click", getInfo);
 
 //Complete the event handler function for the form
 function getInfo() {
@@ -32,6 +28,7 @@ function getInfo() {
   d3.event.preventDefault();
   var inputElement = d3.select("#datetime").property("value");
   console.log(inputElement);
+  
   //Filter
   var filteredData = tableData.filter(record => record.datetime === inputElement);
   console.log(filteredData);
