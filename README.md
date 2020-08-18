@@ -18,11 +18,11 @@ then adds new rows of data for each UFO sightingCreate a table dynamically from 
 ### Level 2: Multiple Search Categories 
 *  Use multiple 'input tages and/or select dropdowns, write JavaScript code so the user can set multiple filters and search for UFO sightings using the following criteria based
 on the table columns:
-* - date/time
-* - city
-* - state
-* - country
-* - shape
+ - date/time
+ - city
+ - state
+ - country
+ - shape
 
 ## Coding languages
 * JavaScript
