@@ -229,3 +229,16 @@ select {
     opacity: 1;
   }
 }
+
+.table-head {
+  font-weight: bold;
+  font-size: 15px;
+  color: darkblue;
+  text-align: justify;
+  }
+
+  #filters {
+    color: darkblue;
+    font-size: 15px;
+    font-weight: bold;
+  }
