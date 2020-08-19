@@ -23,7 +23,7 @@ on the table columns:
  - country
  - shape
 
-## Coding languages
+## Languages
 * JavaScript
 * HTML
 * CSS
